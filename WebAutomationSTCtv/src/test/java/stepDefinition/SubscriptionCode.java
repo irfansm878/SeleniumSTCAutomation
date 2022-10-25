@@ -11,6 +11,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.SubscriptionPageElements;
 
 
@@ -25,7 +26,7 @@ public class SubscriptionCode {
 	
 	@Before
 	public void OpenBrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
